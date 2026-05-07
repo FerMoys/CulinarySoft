@@ -3,6 +3,7 @@ import dishRoutes from './routes/dishRoutes.js'
 import inventoryRoutes from './routes/inventoryRoutes.js'
 import ticketsRoutes from './routes/ticketsRoutes.js'
 import ordersRoutes from './routes/ordersRoutes.js'
+import tablesRoutes from './routes/tablesRoutes.js'
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -17,6 +18,7 @@ app.use('/api/dishes', dishRoutes)
 app.use('/api/products', inventoryRoutes)
 app.use('/api/tickets', ticketsRoutes)
 app.use('/api/orders', ordersRoutes)
+app.use('/api/tables', tablesRoutes)
 
 
 const PORT = process.env.PORT || 4000;
