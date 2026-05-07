@@ -1,0 +1,29 @@
+{
+  "name": "culinarysoft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FerMoys/CulinarySoft.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/FerMoys/CulinarySoft/issues"
+  },
+  "homepage": "https://github.com/FerMoys/CulinarySoft#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.1",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
