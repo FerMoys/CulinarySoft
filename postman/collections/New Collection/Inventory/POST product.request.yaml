@@ -1,0 +1,18 @@
+$kind: http-request
+name: POST product
+url: http://localhost:4000/api/products
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"Salsa Verde\",\r
+
+    \    \"stock\": 2000,\r
+
+    \    \"unit\": \"ml\",\r
+
+    \    \"minimum_stock\": 500\r
+
+    }"
+order: 4478186018586391

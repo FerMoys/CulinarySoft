@@ -1,0 +1,5 @@
+$kind: http-request
+name: New Request
+url: http://localhost:4000/api/products/23/delete
+method: PATCH
+order: 4500406379111534

@@ -1,0 +1,8 @@
+$kind: http-request
+name: PATCH product
+url: http://localhost:4000/api/products/24
+method: PATCH
+body:
+  type: json
+  content: "{\r\n    \"stock\": 1800\r\n}"
+order: 4486853419711090
