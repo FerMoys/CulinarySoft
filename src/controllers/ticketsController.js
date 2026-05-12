@@ -1,4 +1,5 @@
 import * as ticketsService from '../services/ticketsService.js'
+import * as inventoryService from '../services/inventoryService.js'
 
 export const getTickets = async(req,res) => {
     try{
@@ -44,12 +45,16 @@ export const updateTicket = async(req,res) => {
     }
 }
 
-export const cancelTicket = async(req,res) => {
-    const {id} = req.params
-    try{
-        const cancelledTicket = await ticketsService.cancelTicket(id);
-        res.status(201).json(cancelledTicket)
-    }catch(error){
-        res.status(500).json({error:'Error al cancelar el ticket'})
+
+
+export const closeTicket = async (req, res) => {
+    const { ticket_id } = req.params;
+    try {
+        const closedTicket = await ticketsService.closeTicket(id);
+        await inventoryService.syncInventory(ticket_id, 'ticket');
+        res.status(201).json(closedTicket)
+        res.status(200).json({ message: 'Inventario del ticket actualizado' });
+    } catch (error) {
+        res.status(500).json({ error: 'Error al procesar inventario o cerrar ticket' });
     }
-}
+};

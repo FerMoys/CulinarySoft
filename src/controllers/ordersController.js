@@ -1,4 +1,5 @@
 import * as ordersService from '../services/ordersService.js'
+import * as inventoryService from '../services/inventoryService.js';
 
 export const getOrders = async(req,res) => {
     try{
@@ -52,3 +53,24 @@ export const cancelOrder = async(req,res) => {
         res.status(500).json({error:'Error al cancelar la orden'})
     }
 }
+
+export const finalizeOrder = async (req, res) => {
+
+    const { order_id } = req.body;
+
+    try {
+        const updatedOrder = await ordersService.updateOrder(order_id, {
+            state_id: 4
+        });
+        await inventoryService.syncInventory(order_id);
+
+        res.status(200).json({
+            message: 'Orden finalizada e inventario actualizado',
+            order: updatedOrder
+        });
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
+        });
+    }
+};

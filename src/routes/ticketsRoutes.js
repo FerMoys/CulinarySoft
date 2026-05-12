@@ -1,14 +1,22 @@
-import {Router} from 'express';
-import {cancelTicket, createTicket, getTicket, getTickets, updateTicket} from '../controllers/ticketsController.js'
+import { Router } from 'express';
+import { 
+    closeTicket, 
+    createTicket, 
+    getTicket, 
+    getTickets, 
+    updateTicket
+} from '../controllers/ticketsController.js';
 
-const router = Router()
 
-router.get('/:id', getTicket)
-router.get('/', getTickets)
+import { validateCancelTicket, checkTableAvailability } from '../middlewares/tableValidator.js';
+import { validatePositiveAmount } from '../middlewares/orderValidator.js';
 
-router.post('/', createTicket)
+const router = Router();
 
-router.patch('/:id', updateTicket)
-router.patch('/:id/cancel', cancelTicket)
+router.get('/:id', getTicket);
+router.get('/', getTickets);
+
+router.patch('/:id', validatePositiveAmount, updateTicket);
+router.delete('/:id/close', validateCancelTicket, closeTicket);
 
 export default router;

@@ -63,7 +63,7 @@ export const updateTicket = async(id, updates) => {
     return data;
 }
 
-export const cancelTicket = async(id) => {
+export const closeTicket = async(id) => {
     const {data, error} = await supabase
         .from('tickets')
         .update({is_active: false})

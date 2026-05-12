@@ -1,0 +1,5 @@
+$kind: http-request
+name: GET dishes
+url: http://localhost:4000/api/dishes
+method: GET
+order: 1778529927752

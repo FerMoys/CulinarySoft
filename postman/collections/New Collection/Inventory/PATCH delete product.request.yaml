@@ -1,0 +1,5 @@
+$kind: http-request
+name: PATCH delete product
+url: ""
+method: GET
+order: 4499923325939098

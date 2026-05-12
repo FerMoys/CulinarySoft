@@ -1,5 +1,5 @@
 import express from 'express';
-import dishRoutes from './routes/dishRoutes.js'
+import dishesRoutes from './routes/dishesRoutes.js'
 import inventoryRoutes from './routes/inventoryRoutes.js'
 import ticketsRoutes from './routes/ticketsRoutes.js'
 import ordersRoutes from './routes/ordersRoutes.js'
@@ -14,7 +14,7 @@ app.use(express.json())
 
 
 //Importando el 'paquete' de rutas
-app.use('/api/dishes', dishRoutes)
+app.use('/api/dishes', dishesRoutes)
 app.use('/api/products', inventoryRoutes)
 app.use('/api/tickets', ticketsRoutes)
 app.use('/api/orders', ordersRoutes)
