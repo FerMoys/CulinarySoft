@@ -385,7 +385,8 @@ GET /api/products/:id
     "unit": "ml",
     "minimum_stock": 2000,
     "is_active": false
-}```
+}
+```
 ---
 
 ## Crear producto
@@ -414,7 +415,8 @@ POST /api/products
     "unit": "ml",
     "minimum_stock": 500,
     "is_active": true
-}```
+}
+```
 
 ## Actualizar producto
 ```http
@@ -438,7 +440,8 @@ PATCH /api/products/:id
     "unit": "ml",
     "minimum_stock": 500,
     "is_active": true
-}```
+}
+```
 ## Eliminar producto
 ```http
 PATCH /api/products/:id/delete
@@ -453,7 +456,8 @@ PATCH /api/products/:id/delete
     "unit": "ml",
     "minimum_stock": 500,
     "is_active": false
-}```
+}
+```
 ---
 
 # Orders
